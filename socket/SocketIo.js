@@ -26,12 +26,12 @@ const io = socket(server, {
   };
   
   const getUser = (userId) => {
-    return users.find((user) => user.userId === userId);
+    users.find((user) => user.userId === userId);
   };
   
   io.on("connection", (socket) => {
     //when ceonnect
-    console.log("a user connected.");
+    // console.log("a user connected.");
   
     //take userId and socketId from user
     socket.on("addUser", (userId) => {
@@ -50,7 +50,7 @@ const io = socket(server, {
   
     //when disconnect
     socket.on("disconnect", () => {
-      console.log("a user disconnected!");
+      // console.log("a user disconnected!");
       removeUser(socket.id);
       io.emit("getUsers", users);
     });

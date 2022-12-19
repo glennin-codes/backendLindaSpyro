@@ -17,9 +17,14 @@ app.use("/api/messages", messageRoutes)
 
 
 
-const PORT = process.env.PORT ||5001
+const PORT = process.env.PORT
 
-mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
+mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true, useUnifiedTopology: true }
+).then(() => console.log('connected to db'),
+
+app.listen(PORT, () => console.log(`Listening at Port ${PORT}`))
+
+)
   .catch((error) => console.log(`${error} did not connect`));
   
 

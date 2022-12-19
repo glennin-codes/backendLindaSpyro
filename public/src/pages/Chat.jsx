@@ -20,7 +20,7 @@ export default function Chat() {
     } else {
       setCurrentUser(
         await JSON.parse(
-          localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+          localStorage.getItem('chat-app-current-user')
         )
       );
     }
